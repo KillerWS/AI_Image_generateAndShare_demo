@@ -3,7 +3,7 @@ import * as dotenv from 'dotenv';
 import cors from 'cors';
 import connectDB from './DBConnectPool/connect.js';
 import postRoutes from './routes/postRoutes.js'
-import dalleRoutes from './routes/dalleRoutes.js'
+import openAIRoutes from './routes/openAIRoutes.js'
 dotenv.config();
 
 const app = express();
@@ -12,7 +12,7 @@ app.use(cors());
 app.use(express.json({limit: '50mb'}))
 
 app.use('/api/v1/post',postRoutes);
-app.use('/api/v1/dalle',dalleRoutes);
+app.use('/api/v1/openai',openAIRoutes);
 
 app.use('/test',(req,res)=>{res.send("It works :)")})
 

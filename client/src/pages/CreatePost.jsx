@@ -19,14 +19,14 @@ const CreatePost = () => {
     const [loading, setLoading] = useState(false);
 
     const handleSubmit = async(e) =>{
-        //禁止默认调用
+        //禁止提交表单后默认刷新
         e.preventDefault();
         
         if(form.prompt && form.photo){
             setLoading(true);
 
             try {
-                const response = await fetch('https://dall-e-test.onrender.com/api/v1/post',{
+                const response = await fetch('http://localhost:8080/api/v1/post',{
                     method:'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -60,7 +60,7 @@ const CreatePost = () => {
         if(form.prompt) {
             try {
                 setGeneratingImg(true);
-                const response = await fetch('https://dall-e-test.onrender.com/api/v1/dalle', {
+                const response = await fetch('http://localhost:8080/api/v1/openai/dalle', {
                     method:'POST',
                     headers: {
                         'Content-Type': 'application/json',
