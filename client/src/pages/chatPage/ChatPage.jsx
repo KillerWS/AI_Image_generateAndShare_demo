@@ -133,7 +133,7 @@ const ChatPage = () => {
         loader2(messageDiv);
         
         //fetch data from server
-        const response = await fetch('http://localhost:8080/api/v1/openai/chatgpt', {
+        const response = await fetch('https://dall-e-test.onrender.com/api/v1/openai/chatgpt', {
                     method:'POST',
                     headers: {
                         'Content-Type': 'application/json',
